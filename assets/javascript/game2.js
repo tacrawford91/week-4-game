@@ -1,36 +1,41 @@
-var lannister = {
-    family: "lannister",
-    flag: "./../week-4-game/assets/images/lannister.png",
-    armies: 100
+// var lannister = {
+//     family: "lannister",
+//     flag: "./../week-4-game/assets/images/lannister.png",
+//     armies: 100
+// };
+// var stark = {
+//    family: "stark",
+//    flag: "./../week-4-game/assets/images/stark.png",
+//    armies: 150
+// };
+// var bar = {
+//    family: "bar",
+//    flag: "./../week-4-game/assets/images/bar.png",
+//    armies: 180
+// };
+// var targ = {
+//    family: "targ",
+//    flag: "./../week-4-game/assets/images/targ.png",
+//    armies: 120
+var houses = {
+    family: ["lannister", "stark", "bar", "targ"],
+    flag:[ "./../week-4-game/assets/images/lannister.png", "./../week-4-game/assets/images/stark.png", "./../week-4-game/assets/images/bar.png","./../week-4-game/assets/images/targ.png"],
+    armies:[100,150,180,120]
 };
-var stark = {
-   family: "stark",
-   flag: "./../week-4-game/assets/images/stark.png",
-   armies: 150
-};
-var bar = {
-   family: "bar",
-   flag: "./../week-4-game/assets/images/bar.png",
-   armies: 180
-};
-var targ = {
-   family: "targ",
-   flag: "./../week-4-game/assets/images/targ.png",
-   armies: 120
-};var houses = [lannister,stark,bar,targ];
 
 var attacker;
 var defender;
 var sigilDiv;
 var familySelected;
+var houses;
 
 //Row1
-for (var i = 0; i < houses.length; i++) {
+for (var i = 0; i < houses.family.length; i++) {
     var sigilDiv = $("<div>");
     sigilDiv.addClass("sigil sigil1")
-    sigilDiv.attr("family", houses[i].family);
-    sigilDiv.html("<img src ='" + houses[i].flag +"'>");
-    sigilDiv.append($("<h3>").text("Armies: "+ houses[i].armies));
+    sigilDiv.attr("family", houses.family[i]);
+    sigilDiv.html("<img src ='" + houses.flag[i] +"'>");
+    sigilDiv.append($("<h3>").text("Armies: "+ houses.armies[i]));
     $(".house"+ i).append(sigilDiv);
 }
 
@@ -41,19 +46,29 @@ $(".sigil1").on("click", function() {
     familySelected.show();
     var selectedFamilyName = $(this).attr("family")
     console.log(selectedFamilyName);
-    for (var i = 0; i < houses.length; i++) {
-        if(houses[i].family === selectedFamilyName) {
-            // console.log(houses[i].toString());
-            // var splicedIndex = $.inArray(selectedFamilyName, houses);
-            // console.log("spliced index: " + splicedIndex);
-            // if (splicedIndex > 0){
-            // houses.splice(splicedIndex,1);
-            // }
-        // } else {
-        //     console.log("NADABA")
-        // }
-        houses[i].remove();
-    }
-    console.log(houses);    
+    for (var i = 0; i < houses.family.length; i++) {
+            console.log(houses.family[i])
+            if (houses.family[i] === selectedFamilyName) {
+                var indexToRemove = jQuery.inArray(selectedFamilyName, houses.family);
+                console.log("itme: " + indexToRemove);
+                houses.family.splice(indexToRemove,1);
+                houses.flag.splice(indexToRemove,1);
+                houses.armies.splice(indexToRemove,1);
+            } else {
+                console.log("no dice");
+            }
+        }
+    rivalHouses = houses;
+    console.log("rivals" + rivalHouses.family);
+
+            //  gernerate row 3
+        for (var i = 0; i < rivalHouses.family.length; i++) {
+            var sigilDiv = $("<div>");
+            console.log("rival house : " + rivalHouses.family)
+            sigilDiv.addClass("sigil sigil2")
+            sigilDiv.attr("family", rivalHouses.family[i]);
+            sigilDiv.html("<img src ='" + rivalHouses.flag[i] +"'>");
+            sigilDiv.append($("<h3>").text("Armies: "+ rivalHouses.armies[i]));
+            $(".rival"+ i).append(sigilDiv);
     }
 })

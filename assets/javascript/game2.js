@@ -1,22 +1,4 @@
-// var lannister = {
-//     family: "lannister",
-//     flag: "./../week-4-game/assets/images/lannister.png",
-//     armies: 100
-// };
-// var stark = {
-//    family: "stark",
-//    flag: "./../week-4-game/assets/images/stark.png",
-//    armies: 150
-// };
-// var bar = {
-//    family: "bar",
-//    flag: "./../week-4-game/assets/images/bar.png",
-//    armies: 180
-// };
-// var targ = {
-//    family: "targ",
-//    flag: "./../week-4-game/assets/images/targ.png",
-//    armies: 120
+
 var houses = {
     family: ["lannister", "stark", "bar", "targ"],
     flag:[ "./../week-4-game/assets/images/lannister.png", "./../week-4-game/assets/images/stark.png", "./../week-4-game/assets/images/bar.png","./../week-4-game/assets/images/targ.png"],

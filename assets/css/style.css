@@ -1,4 +1,19 @@
-/* placeHolder */
-
-
-/* DELETE RESET IF USING BOOTSTRAP */
+.sigil {
+    width: 65%;
+    height: 220px;
+}
+.sigil img {
+    width: 100%;
+    height: 180px;
+}
+.row {
+    height: 250px;
+}
+.hidden {
+    display: none;
+}
+.button {
+width: 100%;
+height: 50%;
+font-size: 30px;
+}

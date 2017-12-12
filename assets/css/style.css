@@ -6,7 +6,13 @@
 }
 .sigil h2 {
     margin: 0;
-    font-weight: 600px;
+    font-weight: 800;
+    background: #d9dae7;
+    border-radius: 20px;
+}
+.sigil h3 {
+    margin: 0;
+    font-weight: 600;
 }
 .sigil img {
     width: 100%;
@@ -14,8 +20,21 @@
     height: 80%;
     padding: 10px;
 }
+.armies {
+    background: #a6a6a66b;
+    border-radius: 20px;
+    color: #231e8ddb;
+    padding: 6px;
+}
+.enemies {
+    margin: 0;
+    background: #17171ad4;
+    border-radius: 20px;
+    color: #ff0010db;
+    padding: 6px;
+}
 .row {
-    height: 330px;
+    height: 410px;
 }
 .hidden {
     display: none;
@@ -27,4 +46,9 @@ font-size: 30px;
 }
 .selected {
     border: 4px solid black;
+    border-radius: 25px;
+}
+.versus {
+    border: 4px solid rgb(158, 0, 0);
+    border-radius: 25px;
 }

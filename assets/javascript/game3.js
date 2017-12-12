@@ -9,7 +9,8 @@ var attacker = null;
 var defender = {
     family:"",
     flag:"",
-    armies:""
+    armies:"",
+    title:""
 };
 var numberOfClicks = 0;
 var sigilDiv;
@@ -75,7 +76,7 @@ $(".sigil1").on("click", function() {
             // console.log("rival house : " + rivalHouses.family)
             sigilDiv.addClass("sigil sigil2")
             sigilDiv.attr("family", rivalHouses.family[j]);
-            sigilDiv.html("<img src ='" + rivalHouses.flag[j] +"'>");
+            sigilDiv.html("<h3> House </h3> <h2> " + houses.title[j] + "</h2> <img src ='" + houses.flag[j] +"'>");
             sigilDiv.append($("<h3>").text("Armies: "+ rivalHouses.armies[j]));
             $(".rival"+ j).append(sigilDiv);
         }
@@ -90,15 +91,16 @@ $(".sigil1").on("click", function() {
                     defender.family = houses.family[k];
                     defender.flag = houses.flag[k];
                     defender.armies = houses.armies[k];
+                    defender.title = houses.title[k];
                     defenderSelected = $(this);
                     // console.log("Defender Goods: "+ defender.family + defender.flag + defender.armies);
                     // $(".enemy").append(defender);
                     // $(".enemy>h3").text();
                     enemyDiv = $("<div>");
-                    enemyDiv.addClass("sigil sigil1 defeated")
+                    enemyDiv.addClass("sigil sigil1 defeated versus")
                     enemyDiv.attr("family", defender.family);
-                    enemyDiv.html("<img src ='" + defender.flag +"'>");
-                    enemyDiv.append($("<h3>").addClass("enemyArmies").text("Armies: "+ defender.armies));
+                    enemyDiv.html("<h3> House </h3> <h2> " + defender.title + "</h2> <img src ='" + defender.flag +"'>");
+                    enemyDiv.append($("<h3>").addClass("enemyArmies enemies").text("Armies: "+ defender.armies));
                     $(".enemy").append(enemyDiv);
                     rivalFamilyName = $(this).attr("family")
                     // console.log("rival Family Name: " + rivalFamilyName);
@@ -130,7 +132,8 @@ $(".sigil1").on("click", function() {
                     defender = {
                         family:"",
                         flag:"",
-                        armies:""
+                        armies:"",
+                        title:""
                     };
                 }
             } else {

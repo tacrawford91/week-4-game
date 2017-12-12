@@ -63,6 +63,7 @@ $(".sigil1").on("click", function() {
                 houses.flag.splice(indexToRemove,1);
                 attackerArmies = houses.armies[indexToRemove];
                 houses.armies.splice(indexToRemove,1);
+                houses.title.splice(indexToRemove,1);
             } else {
                 console.log("no dice");
             }

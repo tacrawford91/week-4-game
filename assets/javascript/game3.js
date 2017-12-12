@@ -1,7 +1,8 @@
 var houses = {
     family: ["lannister", "stark", "bar", "targ"],
     flag:[ "./../week-4-game/assets/images/lannister.png", "./../week-4-game/assets/images/stark.png", "./../week-4-game/assets/images/bar.png","./../week-4-game/assets/images/targ.png"],
-    armies:[100,150,180,120]
+    armies:[100,150,180,120],
+    title: ["Lannister", "Stark", "Baratheon", "Targaryen"],
 };
 
 var attacker = null;
@@ -32,31 +33,31 @@ function defend() {
     return harm
 }
 $("body").on("click", function(){
-    numberOfClicks = numberOfClicks + 5;
-    console.log(numberOfClicks);
+    numberOfClicks = numberOfClicks + 3;
 })
 //Row1
 for (var i = 0; i < houses.family.length; i++) {
     sigilDiv = $("<div>");
     sigilDiv.addClass("sigil sigil1")
     sigilDiv.attr("family", houses.family[i]);
-    sigilDiv.html("<img src ='" + houses.flag[i] +"'>");
+    sigilDiv.html("<h3> House </h3> <h2> " + houses.title[i] + "</h2> <img src ='" + houses.flag[i] +"'>");
     sigilDiv.append($("<h3>").addClass("armies").text("Armies: "+ houses.armies[i]));
     $(".house"+ i).append(sigilDiv);
 }
 
 $(".sigil1").on("click", function() {
     attacker = $(this)
-    console.log(attacker);
+    attacker.addClass("selected");
+    // console.log(attacker);
     $(".sigil1").hide();
     attacker.show();
     var attackerFamilyName = $(this).attr("family")
-    console.log(attackerFamilyName);
+    // console.log(attackerFamilyName);
     for (var i = 0; i < houses.family.length; i++) {
-            console.log(houses.family[i])
+            // console.log(houses.family[i])
             if (houses.family[i] === attackerFamilyName) {
                 var indexToRemove = jQuery.inArray(attackerFamilyName, houses.family);
-                console.log("itme: " + indexToRemove);
+                // console.log("indextoremove: " + indexToRemove);
                 houses.family.splice(indexToRemove,1);
                 houses.flag.splice(indexToRemove,1);
                 attackerArmies = houses.armies[indexToRemove];
@@ -71,7 +72,7 @@ $(".sigil1").on("click", function() {
             //  gernerate row 3
         for (var j = 0; j < rivalHouses.family.length; j++) {
             var sigilDiv = $("<div>");
-            console.log("rival house : " + rivalHouses.family)
+            // console.log("rival house : " + rivalHouses.family)
             sigilDiv.addClass("sigil sigil2")
             sigilDiv.attr("family", rivalHouses.family[j]);
             sigilDiv.html("<img src ='" + rivalHouses.flag[j] +"'>");
@@ -90,7 +91,7 @@ $(".sigil1").on("click", function() {
                     defender.flag = houses.flag[k];
                     defender.armies = houses.armies[k];
                     defenderSelected = $(this);
-                    console.log("Defender Goods: "+ defender.family + defender.flag + defender.armies);
+                    // console.log("Defender Goods: "+ defender.family + defender.flag + defender.armies);
                     // $(".enemy").append(defender);
                     // $(".enemy>h3").text();
                     enemyDiv = $("<div>");
@@ -100,7 +101,7 @@ $(".sigil1").on("click", function() {
                     enemyDiv.append($("<h3>").addClass("enemyArmies").text("Armies: "+ defender.armies));
                     $(".enemy").append(enemyDiv);
                     rivalFamilyName = $(this).attr("family")
-                    console.log("rival Family Name: " + rivalFamilyName);
+                    // console.log("rival Family Name: " + rivalFamilyName);
                 } else {
                     console.log("Double No Dice");
                 }

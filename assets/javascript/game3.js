@@ -129,7 +129,7 @@ $(".sigil1").on("click", function() {
                 }
                 if (defender.armies <= 0){
                     $(".defeated").remove();
-                    $(".enemy").append($("<h2>").addClass("nextOpp").text("DEFEATED! Click next opponent to battle"));
+                    $(".enemy").append($("<h2>").addClass("nextOpp").text("Victory. Click next opponent to battle"));
                     defender = {
                         family:"",
                         flag:"",

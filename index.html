@@ -13,57 +13,40 @@
     crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="jumbotron">
-            <h1>The Game of Thrones</h1>
-            <p>What do you fight for; Riches, Honor, Glory, or Power. Which ever it is, one must know how win the game of thrones!</p>
+    <!-- <div class="container"> -->
+        <div class="jumbotron text-center">
+            <h1><span>#</span></h1>
+            <p>Wealth, Honor, Glory, or Power.</p>
+            <p> Whichever you fight for; one must know how to win</p>
+            <p>The Game Of Thrones</p>
         </div>
-    </div>
+    <!-- </div> -->
     <div class="container">
         <h1>CHOOSE YOUR ALLEGIANCE</h1>
-        <div class="row">
-            <div class="col-md-3 col-lg-3 text-center">
-                <div class="lannisterSigil sigil notChosen" id="lannister">
-                    <img src="./assets/images/lannister.png" alt="">            
-                </div>
-            </div>
-            <div class="col-md-3 col-lg-3 text-center">
-                <div class="starkSigil sigil notChosen" id="stark"><img src="./assets/images/stark.png" alt=""></div>
-            </div>
-            <div class="col-md-3 col-lg-3 text-center">
-                <div class="barSigil sigil notChosen" id="bar"><img src="./assets/images/bar.png" alt=""></div>
-            </div>
-            <div class="col-md-3 col-lg-3 text-center">
-                <div class="targSigil sigil notChosen" id="targ"><img src="./assets/images/targ.png" alt=""></div>
-            </div>
+        <div class="row row1">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-center house0"></div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-center house1"></div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-center house2"></div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-center house3"></div>
         </div>
-        <h1>Current Enemy!</h1>
+        <h1>CURRENT WAR</h1>
         <div class="row row2">
-            <div class="col-md-3 col-lg-3 text-center enemy">
-                <!-- <div class="lannisterSigil sigil sigil2">
-                    <img src="./assets/images/lannister.png" alt="">            
-                </div> -->
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center attacker"></div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
+                <button type="button" class="btn btn-danger button">Attack</button>
             </div>
-            <div class="col-md-3 col-lg-3 text-center">
-                <button type="button" class="btn btn-danger button">Attack!</button>
-                <!-- <div class="starkSigil sigil sigil2"><img src="./assets/images/stark.png" alt=""></div> -->
-            </div>
-            <div class="col-md-3 col-lg-3 text-center">
-                <!-- <div class="barSigil sigil sigil2"><img src="./assets/images/bar.png" alt=""></div> -->
-            </div>
-            <div class="col-md-3 col-lg-3 text-center">
-                <!-- <div class="targSigil sigil sigil2"><img src="./assets/images/targ.png" alt=""></div> --> -->
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center enemy">
+                <!-- <img class="throne" src="assets/images/throne.jpg"> -->
             </div>
         </div>
+        <h1>RIVAL HOUSES - CHOOSE NEXT OPPONENT </h1>
         <div class="row row3">
-            <h1>Rival Houses - Choose Next Opponent</h1>
-            <div class="col-md-3 col-lg-3 text-center 0"></div>
-            <div class="col-md-3 col-lg-3 text-center 1"></div>
-            <div class="col-md-3 col-lg-3 text-center 2"></div>
-            <div class="col-md-3 col-lg-3 text-center 3"></div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 text-center rival0"></div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 text-center rival1"></div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 text-center rival2"></div>
         </div>
 </div>
-
+<audio id="my_audio" src="assets/audio/GOT.mp3" loop="loop"></audio>
     <script src="assets/javascript/game.js"></script>
 </body>
 </html>
